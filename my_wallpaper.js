@@ -1,6 +1,16 @@
 //your parameter variables go here!
 let rect_width  = 20;
 let rect_height = 30;
+//mine
+let eyeX = 100
+let innereyeX = 100
+let irisX = 100
+
+let eyeY = 100
+let innereyeY = 100
+let irisY = 100
+
+let blinkEye = 60   //smallest is 40, largest 100 (60 best)
 
 
 function setup_wallpaper(pWallpaper) {
@@ -17,9 +27,45 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(240, 255, 240); //light honeydew green colour
+  background(22, 102, 168); //light honeydew green colour
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-  rect(40 ,40, rect_width, rect_height);
+  noStroke();
+  fill(166, 215, 255);
+  ellipse(eyeX,eyeY,100,blinkEye,10);//eyeball
+
+  fill(76, 143, 199);
+  ellipse(innereyeX,innereyeY,40,40,2);//inner blue
+  fill (0);
+  ellipse(irisX,irisY,20,20);//iris?
+
+  triangle(95,65,105,65,100,50)
+  triangle(63,75,75,70,65,60)
+ 
+
+
+}
+
+function chair(){
+ //rect(40 ,40, rect_width, rect_height);
+  //mine
+  noStroke()
+  fill (219, 106, 7);
+  quad (75, 100, 125, 100, 140, 125, 60, 125);//seat?
+  fill (191, 64, 10)
+  rect (75,50,50,50);//back
+  rect (60,125,10,50)//left leg
+  rect (130,125,10,50)//right leg
+
+}
+function eye(){
+    noStroke();
+  fill(166, 215, 255);
+  ellipse(eyeX,eyeY,100,blinkEye);//eyeball
+
+  fill(76, 143, 199);
+  ellipse(innereyeX,innereyeY,40,40);//inner blue
+  fill (0);
+  ellipse(irisX,irisY,20,20);//iris?
 }
