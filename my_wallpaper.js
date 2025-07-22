@@ -14,8 +14,8 @@ let blinkEye = 60   //smallest is 40, largest 100 (60 best)
 
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
-  //pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
@@ -33,15 +33,18 @@ function wallpaper_background() {
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
   noStroke();
   fill(166, 215, 255);
-  ellipse(eyeX,eyeY,100,blinkEye,10);//eyeball
+  ellipse(eyeX,eyeY,100,blinkEye,);//eyeball
 
   fill(76, 143, 199);
-  ellipse(innereyeX,innereyeY,40,40,2);//inner blue
+  ellipse(innereyeX,innereyeY,40,40);//inner blue
   fill (0);
   ellipse(irisX,irisY,20,20);//iris?
 
   triangle(95,65,105,65,100,50)
   triangle(63,75,75,70,65,60)
+  triangle(125,70,135,75,137,60)
+
+  triangle(130,90,150,100, 1)
  
 
 
@@ -68,4 +71,5 @@ function eye(){
   ellipse(innereyeX,innereyeY,40,40);//inner blue
   fill (0);
   ellipse(irisX,irisY,20,20);//iris?
+
 }
