@@ -17,8 +17,8 @@ let eyeSize = 15 //15//25//30//
 
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
-  //pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
@@ -39,6 +39,10 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
  noStroke()
  fill(105, 23, 66)//purple
  rect(120,70,80,15)
+
+ noStroke()
+ fill(105, 23, 66)//purple
+ rect(165,70,80,15)
  
  //BEAK
  noStroke()
@@ -63,8 +67,38 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
  if (mouseX <= 100){
   fill(105, 23, 66)
-  ellipse(60,80,20)
+  ellipse(60,78,20)
  }
+
+ //BIRD 2
+   //NECK
+ noStroke()
+ fill(105, 23, 66)//purple
+ rect(0,120,80,15)
+ 
+ //BEAK
+ noStroke()
+ fill(105, 23, 66)//purple
+ triangle (beakX1-50,beakY1+50,beakX2-50,beakY2+50,beakLengthX+100,beakLengthY-40+50)//beak top
+ triangle (beakX1-50,beakY1+50,beakX2-50,beakY2+50,beakLengthX+100,beakLengthY+50)//beak bottom
+ 
+ //HEAD
+ fill (105, 23, 66)//purple
+ noStroke()
+ ellipse(X-50,Y+50,45)//head ///                changed
+
+ //EYE
+ fill (232, 126, 21)//orange
+ ellipse(X-50,Y+50,eyeSize+10)//eyeball //      changed
+ fill (105, 23, 66)//purple
+ ellipse (X-50,Y+50,eyeSize)//inner eye//       changed
+ strokeWeight(1)
+ stroke(232, 126, 21)//orange ring
+ noFill()
+ ellipse(X-50,Y+50,eyeSize+15)//                changed
+
+
+
 
 
  
