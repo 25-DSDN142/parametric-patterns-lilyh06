@@ -1,8 +1,7 @@
 //your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 30;
+
 //beak
-let beakX1 = 125; //125// add additions in function
+let beakX1 = 125; //125// add additions in function//half beak thickness
 let beakY1 = 90; //90// add additions in function (size)
 let beakX2 = 125; //125//
 let beakY2 = 70; //110//
@@ -12,8 +11,8 @@ let beakLengthY = 100;//100 & -40 from first line//TILT OF BEAK
 //eye
 let X = 125 //125//
 let Y = 75 //100//
-let eyeSize = 15 //15//25//30// 
-
+let eyeSize = 16 //15//25//30// 
+let beakColourChange = 1;//chnage number for diff colour
 
 
 function setup_wallpaper(pWallpaper) {
@@ -26,7 +25,7 @@ function setup_wallpaper(pWallpaper) {
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 50;
+  pWallpaper.grid_settings.row_offset  = 100;//50
 }
 
 function wallpaper_background() {
@@ -34,21 +33,37 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
+ let myPurple = color(105, 23, 66);
+ let myBlue = color(0, 0, 255);
+ let myRed = color(255, 0, 0);
+
+ if(eyeSize>15){fill(255,0,0);}
+
  //BIRD 1
   //NECK
  noStroke()
- fill(105, 23, 66)//purple
+fill(105, 23, 66)//purple
  rect(120,70,80,15)
-
- noStroke()
- fill(105, 23, 66)//purple
- rect(165,70,80,15)
  
+  noStroke()
+ fill(105, 23, 66)//purple
+ rect(0,70,45,15)
+
  //BEAK
  noStroke()
  fill(105, 23, 66)//purple
+ if(beakColourChange == 0){
+    fill(myPurple);
+  }
+  else if(beakColourChange==1){
+    fill(myRed)
+  }
+  else{
+fill(myBlue)
+  }
  triangle (beakX1,beakY1,beakX2,beakY2,beakLengthX,beakLengthY-40)//beak top
  triangle (beakX1,beakY1,beakX2,beakY2,beakLengthX,beakLengthY)//beak bottom
+ 
  
  //HEAD
  fill (105, 23, 66)//purple
@@ -56,7 +71,9 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
  ellipse(X,Y,45)//head
 
  //EYE
- fill (232, 126, 21)//orange
+ if(eyeSize>15){fill(255,0,0);}
+
+ //fill (232, 126, 21)//orange
  ellipse(X,Y,eyeSize+10)//eyeball 
  fill (105, 23, 66)//purple
  ellipse (X,Y,eyeSize)//inner eye
@@ -64,21 +81,31 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
  stroke(232, 126, 21)//orange ring
  noFill()
  ellipse(X,Y,eyeSize+15)
-
- if (mouseX <= 100){
-  fill(105, 23, 66)
-  ellipse(60,78,20)
- }
+ 
+ 
 
  //BIRD 2
-   //NECK
+  //NECK
  noStroke()
  fill(105, 23, 66)//purple
  rect(0,120,80,15)
- 
+
  //BEAK
  noStroke()
  fill(105, 23, 66)//purple
+
+if(beakColourChange == 0){
+    fill(myPurple);
+  }
+  else if(beakColourChange==1){
+    fill(myRed)
+  }
+  else{
+fill(myBlue)
+  }
+ 
+ 
+ 
  triangle (beakX1-50,beakY1+50,beakX2-50,beakY2+50,beakLengthX+100,beakLengthY-40+50)//beak top
  triangle (beakX1-50,beakY1+50,beakX2-50,beakY2+50,beakLengthX+100,beakLengthY+50)//beak bottom
  
@@ -98,25 +125,43 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
  ellipse(X-50,Y+50,eyeSize+15)//                changed
 
 
+ //Neck Extension
+ fill(105, 23, 66)//purple neck extension
+ rect(182,120,20,80)
 
-
-
- 
-
-
-
-
-
-
-
-
-
-
+ noStroke()
+ fill(105, 23, 66)//purple
+ triangle (45,70,45,85,80,80)
+ rect(82,0,20,40)
+ triangle(82,40,102,40,92,55)
 
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function chair(){
  //rect(40 ,40, rect_width, rect_height);
