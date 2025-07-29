@@ -4,16 +4,18 @@
 let beakX1 = 125; //125// add additions in function//half beak thickness
 let beakY1 = 90; //90// add additions in function (size)
 let beakX2 = 125; //125//
-let beakY2 = 70; //110//
+let beakY2 = 70; //70//
 let beakLengthX = 50; //50//
 let beakLengthY = 100;//100 & -40 from first line//TILT OF BEAK
 //HEAD
 //eye
 let X = 125 //125//
-let Y = 75 //100//
-let eyeSize = 16 //15//25//30// 
-let beakColourChange = 1;//chnage number for diff colour
+let Y = 75 //175//
+let eyeSize = 15 //15//25//30// 
+let beakColourChange = 0;//chnage number for diff colour
 
+
+//change beak angles, maybe neck lengths, colours and eye sizing, maybe head size and position?
 
 function setup_wallpaper(pWallpaper) {
   //pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -71,7 +73,8 @@ fill(myBlue)
  ellipse(X,Y,45)//head
 
  //EYE
- if(eyeSize>15){fill(255,0,0);}
+ if(eyeSize>15){fill(255,0,0);} //changes orange//can add more and comment out fill to change others
+ else{fill(232, 126, 21)}
 
  //fill (232, 126, 21)//orange
  ellipse(X,Y,eyeSize+10)//eyeball 
@@ -106,7 +109,7 @@ fill(myBlue)
  
  
  
- triangle (beakX1-50,beakY1+50,beakX2-50,beakY2+50,beakLengthX+100,beakLengthY-40+50)//beak top
+ triangle (beakX1-50,beakY1+50,beakX2-50,beakY2+50,beakLengthX+100,beakLengthY+10)//beak top
  triangle (beakX1-50,beakY1+50,beakX2-50,beakY2+50,beakLengthX+100,beakLengthY+50)//beak bottom
  
  //HEAD
