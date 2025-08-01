@@ -22,8 +22,8 @@ let lineColourChange = 0;
 //change beak angles, maybe neck lengths, colours and eye sizing, maybe head size and position?
 
 function setup_wallpaper(pWallpaper) {
- pWallpaper.output_mode(DEVELOP_GLYPH);
- // pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
@@ -60,14 +60,17 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
  fill(105, 23, 66);//purple
  rect(0,120,80,15);// lower bird's neck
 
- fill(105, 23, 66);//purple
- rect(182,120,20,80);// lower bird's neck extention
+ //fill(105, 23, 66);//purple
+ //rect(182,120,20,80);// lower bird's neck extention long
 
  noStroke()
  fill(105, 23, 66);//purple
  triangle (44.8,70,44.8,85,80,80);//top bird's neck END
- rect(82,0,20,40);
- triangle(82,39.8,102,39.8,92,55);//lower bird's neck END
+ //rect(82,0,20,40);
+ //triangle(82,39.8,102,39.8,92,55);//lower bird's neck long END
+
+ rect(150,120,80,15)//lower bird neck extension
+ triangle(150,120,120,130,150,135)
 
  //BEAK
  noStroke()
@@ -138,23 +141,55 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
  
 
 
-//lines
-  
-  if(lineColourChange == 0){
+ //lines
+ stroke(232, 126, 21)//orange
+ line (170,90,190,70)////rightline
+ line (160,90,180,70)//middleline
+ line (150,90,170,70)//leftline
+ 
+ if(lineColourChange == 0){
     stroke(myPurple);
   }
   else if(beakColourChange==1){
     stroke(myOrange)
   }
   else{
-   stroke(myBlue)
+   stroke(myBlue)//make good looking fun colour!!!!!!!!!!!!!!!
   }
- line(180,70,200,50)
+ line(190,70,200,60)//rightline by neck
+ line(180,70,200,50)//middleline by neck
+ line(170,70,200,40)//leftline by neck
 
-stroke(232, 126, 21)
-line (160,90,180,70)
-line (150,90,180,60)
+ line(0,40,40,0)//leftline top corner
+ line(0,50,50,0)//middleline top corner
+ line(0,60,60,0)//rightline bottom corner
 
+ line(160,200,180,180)//rightline bottom corner
+ line(150,200,180,170)//middleline bottom corner
+ line(140,200,170,170)//leftline bottom corner
+
+
+ 
+
+///cloud?
+ if(lineColourChange == 0){
+    fill(myPurple);
+  }
+  else if(beakColourChange==1){
+    fill(myOrange)
+  }
+  else{
+   fill(myBlue)//make good looking fun colour!!!!!!!!!!!!!!!
+  }
+arc(165, 185, 60, 20, 180, 0)//cloud base
+ellipse(175,175,15)//right top of bottomcloud
+ellipse(160,172,17)//middle top of bottomcloud
+ellipse(150,175,10)
+
+arc(165, 25, 60, 20, 180, 0)//cloud base
+ellipse(175,175,15)//right top of bottomcloud
+ellipse(160,172,17)//middle top of bottomcloud
+ellipse(150,175,10)
 
 
 
