@@ -5,31 +5,33 @@ let tBeakY1 = 90; //90// add additions in function (size)
 let tBeakX2 = 125; //125//
 let tBeakY2 = 70; //70//
 let tBeakLengthX = 50; //50//
-let tBeakLengthY = 100;//100 & -40 from first line//TILT OF BEAK
+let tBeakLengthY = 60;//100 & -40 from first line//TILT OF BEAK
 
 let lBeakX1 = 75; //75// add additions in function//half beak thickness
-let lBeakY1 = 140; //140//(130=thin) add additions in function (size)
-let lBeakX2 = 75; //75//
+let lBeakY1 = 135; //140//(130=thin) add additions in function (size)
+let lBeakX2 = 90; //75//
 let lBeakY2 = 120; //120//
-let lBeakLengthX = 150; //150// smaller=smallerBeak
-let lBeakLengthY = 110;//110 & +40 from first line//TILT OF BEAK 
+let lBeakLengthX = 140; //150// smaller=smallerBeak
+let lBeakLengthY = 150;//110 & +40 from first line//TILT OF BEAK 
+let beakTiltLower = 150//150
 
 //head
 let X = 125 //125//
 let Y = 75 //175//
 
-let eyeSize = 15 //15//25//30//
-let headSize = 45 //45 //changes colour if over 45
+let eyeSize = 30 //15//25//30//
+let headSize = 55 //45 //changes colour if over 45
 
 let beakColourChange = 2;//0=purple 2=orange //also controls inner eye
-let neckColourChange = 1;//0=purple else=blue
-let lineColourChange = 0;//0=purple 1=blue 2=orange//also controls clouds
+let neckColourChange = 2;//0=purple else=blue
+let lineColourChange = 2;//0=purple 1=blue 2=orange else=brown//also controls clouds
+let cloudColourChange = 2;//0=purple 1=blue 2=orange else=brown
 
 //change beak angles, maybe neck lengths, colours and eye sizing, maybe head size and position?
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
-  //pWallpaper.output_mode(GRID_WALLPAPER);
+ // pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   //pWallpaper.show_guide(true); //set this to false when you're ready to print
@@ -118,7 +120,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
  //lower birds beak
  //might need to make this independent from other  bird!!!!!!
  triangle (lBeakX1,lBeakY1,lBeakX2,lBeakY2,lBeakLengthX,lBeakLengthY)//beak top
- triangle (lBeakX1,lBeakY1,lBeakX2,lBeakY2,lBeakLengthX,lBeakLengthY+40)//beak bottom
+ triangle (lBeakX1,lBeakY1,lBeakX2,lBeakY2,lBeakLengthX,beakTiltLower)//beak bottom
  
  //HEAD
  if(headSize>45){fill(74, 117, 186);} //blue
@@ -204,6 +206,9 @@ if(beakColourChange == 0){
   else if(lineColourChange==1){
     stroke(myBlue)
   }
+   else if(lineColourChange==2){
+    stroke(myOrange)
+  }
   else{
    stroke(myBrown)//make good looking fun colour!!!!!!!!!!!!!!!
   }
@@ -222,11 +227,14 @@ if(beakColourChange == 0){
 
  //cloud
  noStroke()
- if(lineColourChange == 0){
+ if(cloudColourChange == 0){
     fill(myPurple);
   }
-  else if(lineColourChange==1){
+  else if(cloudColourChange==1){
     fill(myBlue)
+  }
+   else if(cloudColourChange==2){
+    fill(myOrange)
   }
   else{
    fill(myBrown)
