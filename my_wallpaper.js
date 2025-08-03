@@ -6,27 +6,28 @@ let tBeakX2 = 125; //125//
 let tBeakY2 = 70; //70//
 let tBeakLengthX = 50; //50// smaller=
 let tBeakLengthY = 100;//100 & -40 from first line//TILT OF BEAK
-let beakTiltUpper = 60;//60
+let beakTiltUpper = 100;//60
 
 let lBeakX1 = 75; //75// add additions in function//half beak thickness
 let lBeakY1 = 140; //140//(130=thin) add additions in function (size) 
 let lBeakX2 = 75; //75//
 let lBeakY2 = 120; //120//
 let lBeakLengthX = 150; //150// smaller=smallerBeak
-let lBeakLengthY = 110;//110 & +40 from first line//TILT OF BEAK 
-let beakTiltLower = 150//150
+let lBeakLengthY = 100;//110 & +40 from first line//TILT OF BEAK 
+let beakTiltLower = 100//150
 
 //head
 let X = 125 //125//
 let Y = 75 //75//
-let eyeSize = 15 //15//25//30//
-let headSize = 46 //45 //changes to blue if over 45
+let eyeSize = 0 //15//25//30//
+let headSize = 0 //45 //changes to blue if over 45
 
-let beakColourChange = 2;//0=purple 2=brown //also controls inner eye
-let neckColourChange = 1;//0=purple else=blue
-let lineColourChange = 1;//0=purple 1=blue 2=orange else=brown//also controls clouds
+let beakColourChange = 2;//0=purple 1=blue 2=orange 3=brown //also controls inner eye
+let neckColourChange = 1;//0=purple  1=orange 2=brown else=blue
+let lineColourChange = 0;//0=purple 1=blue 2=orange else=brown//also controls clouds
 let cloudColourChange = 1;//0=purple 1=blue 2=orange else=brown
-let neckLines = 2;// 0=orange 1=purple 2=blue
+let neckLines = 1;// 0=orange 1=purple 2=blue
+let ringColourChange = 0;//0=orange 1=blue else=brown
 
 
 //change beak angles, maybe neck lengths, colours and eye sizing, maybe head size and position?
@@ -64,6 +65,12 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   if(neckColourChange == 0){
     fill(myPurple);
   }
+    else if(neckColourChange==1){
+    fill(myOrange)
+  }
+   else if(neckColourChange==2){
+    fill(myBrown)
+  }
   else{
    fill(myBlue)
   }
@@ -98,8 +105,12 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     fill(myPurple);
   }
   else if(beakColourChange==1){
+    fill(myBlue)
+  }
+   else if(beakColourChange==2){
     fill(myOrange)
   }
+
   else{
    fill(myBrown)
   }
@@ -114,6 +125,9 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     fill(myPurple);
   }
   else if(beakColourChange==1){
+    fill(myBlue)
+  }
+    else if(beakColourChange==2){
     fill(myOrange)
   }
   else{
@@ -174,15 +188,15 @@ if(beakColourChange == 0){
  ellipse (X-50,Y+50,eyeSize)//inner eye//       changed
  
  if(eyeSize>15){stroke(130, 195, 232);} //blue
- else{fill(232, 126, 21)}//orange
+ else{stroke(232, 126, 21)}//orange
  //stroke(232, 126, 21)//orange ring
  noFill()
 
  
- if(lineColourChange == 0){
+ if(ringColourChange == 0){
     stroke(myOrange);
   }
-  else if(lineColourChange==1){
+  else if(ringColourChange==1){
     stroke(myBlue)
   }
   else{
