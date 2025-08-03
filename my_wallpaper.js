@@ -4,37 +4,39 @@ let tBeakX1 = 125; //125// add additions in function//half beak thickness
 let tBeakY1 = 90; //90// add additions in function (size)
 let tBeakX2 = 125; //125//
 let tBeakY2 = 70; //70//
-let tBeakLengthX = 50; //50//
-let tBeakLengthY = 60;//100 & -40 from first line//TILT OF BEAK
+let tBeakLengthX = 50; //50// smaller=
+let tBeakLengthY = 100;//100 & -40 from first line//TILT OF BEAK
+let beakTiltUpper = 60;//60
 
 let lBeakX1 = 75; //75// add additions in function//half beak thickness
-let lBeakY1 = 135; //140//(130=thin) add additions in function (size)
-let lBeakX2 = 90; //75//
+let lBeakY1 = 140; //140//(130=thin) add additions in function (size) 
+let lBeakX2 = 75; //75//
 let lBeakY2 = 120; //120//
-let lBeakLengthX = 140; //150// smaller=smallerBeak
-let lBeakLengthY = 150;//110 & +40 from first line//TILT OF BEAK 
+let lBeakLengthX = 150; //150// smaller=smallerBeak
+let lBeakLengthY = 110;//110 & +40 from first line//TILT OF BEAK 
 let beakTiltLower = 150//150
 
 //head
 let X = 125 //125//
-let Y = 75 //175//
+let Y = 75 //75//
+let eyeSize = 15 //15//25//30//
+let headSize = 46 //45 //changes to blue if over 45
 
-let eyeSize = 30 //15//25//30//
-let headSize = 55 //45 //changes colour if over 45
+let beakColourChange = 2;//0=purple 2=brown //also controls inner eye
+let neckColourChange = 1;//0=purple else=blue
+let lineColourChange = 1;//0=purple 1=blue 2=orange else=brown//also controls clouds
+let cloudColourChange = 1;//0=purple 1=blue 2=orange else=brown
+let neckLines = 2;// 0=orange 1=purple 2=blue
 
-let beakColourChange = 2;//0=purple 2=orange //also controls inner eye
-let neckColourChange = 2;//0=purple else=blue
-let lineColourChange = 2;//0=purple 1=blue 2=orange else=brown//also controls clouds
-let cloudColourChange = 2;//0=purple 1=blue 2=orange else=brown
 
 //change beak angles, maybe neck lengths, colours and eye sizing, maybe head size and position?
 
 function setup_wallpaper(pWallpaper) {
- // pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
-  //pWallpaper.show_guide(true); //set this to false when you're ready to print
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
@@ -102,7 +104,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
    fill(myBrown)
   }
 //top bird's beak
- triangle (tBeakX1,tBeakY1,tBeakX2,tBeakY2,tBeakLengthX,tBeakLengthY-40)//beak top
+ triangle (tBeakX1,tBeakY1,tBeakX2,tBeakY2,tBeakLengthX,beakTiltUpper)//beak top
  triangle (tBeakX1,tBeakY1,tBeakX2,tBeakY2,tBeakLengthX,tBeakLengthY)//beak bottom
  
  noStroke()
@@ -195,10 +197,17 @@ if(beakColourChange == 0){
  
  
  //lines
- stroke(232, 126, 21)//orange
- line (170,90,190,70)////rightline
- line (160,90,180,70)//middleline
- line (150,90,170,70)//leftline
+  if(neckLines==0){ stroke(232, 126, 21);   //orange
+  } 
+ else if(neckLines==1){
+    stroke(myPurple)
+  }
+ else{stroke(myBlue)
+ }
+ 
+ line (176,84,190,70)////rightline
+ line (166,84,180,70)//middleline
+ line (156,84,170,70)//leftline
  
  if(lineColourChange == 0){
     stroke(myPurple);
@@ -212,9 +221,9 @@ if(beakColourChange == 0){
   else{
    stroke(myBrown)//make good looking fun colour!!!!!!!!!!!!!!!
   }
- line(190,70,200,60)//rightline by neck
- line(180,70,200,50)//middleline by neck
- line(170,70,200,40)//leftline by neck
+ line(191,69,200,60)//rightline by neck
+ line(181,69,200,50)//middleline by neck
+ line(171,69,200,40)//leftline by neck
 
  line(0,40,40,0)//leftline top corner
  line(0,50,50,0)//middleline top corner
