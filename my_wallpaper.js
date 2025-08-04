@@ -1,37 +1,35 @@
 //your parameter variables go here!
-
-let tBeakX1 = 192; //125
-let tBeakY1 = 85; //90
-let tBeakX2 = 192; //125
+//topbird
+let tBeakX1 = 125; //125
+let tBeakY1 = 90; //90
+let tBeakX2 = 125; //125
 let tBeakY2 = 70; //70
-
 let tBeakLengthX = 50; //50// 
-let tBeakLengthY = 100;//100 //TILT OF BEAK
+let tBeakLengthY = 100;//100 //tilt
 let beakTiltUpper = 60;//60
-
-let lBeakX1 = 2; //75// add additions in function//half beak thickness
-let lBeakY1 = 135; //140//(130=thin) add additions in function (size) 
-let lBeakX2 = 2; //75//
-let lBeakY2 = 120; //120//
-
-let lBeakLengthX = 150; //150// smaller=smallerBeak
+//lowerbird
+let lBeakX1 = 75; //75// beak thinkness
+let lBeakY1 = 140; //140//beak thickness
+let lBeakX2 = 75; //75
+let lBeakY2 = 120; //120
+let lBeakLengthX = 150; //150 beak length
 let lBeakLengthY = 110;//110 
 let beakTiltLower = 150;//150
-
-let X = 22.5; //125
+//head
+let X = 125; //125
 let Y = 75; //75
 
-let eyeSize = 25; //15//25//30//
-let headSize = 52;//50 //changes to blue if over 50
+let eyeSize = 15; //15
+let headSize = 50;//50 //changes to blue if over 50
 let neckSize = 15;//15
 
-let beakColourChange = 1;//0=purple 1=blue 2=orange 3=brown // also controls inner eye
+let beakColourChange = 0;//0=purple 1=blue 2=orange 3=brown // also controls inner eye
 let neckColourChange = 0;//0=purple  1=orange 2=brown else=blue
-let lineColourChange = 2;//0=purple 1=blue 2=orange else=brown
+let lineColourChange = 0;//0=purple 1=blue 2=orange else=brown
 let cloud1ColourChange = 0;//0=purple 1=blue 2=orange else=brown // lower
-let cloud2ColourChange = 1;//0=purple 1=blue 2=orange else=brown // upper
-let neckLines = 2;// 0=orange 1=purple 2=blue
-let ringColourChange = 1;//0=orange 1=blue 2=purple else=brown
+let cloud2ColourChange = 0;//0=purple 1=blue 2=orange else=brown // upper
+let neckLines = 0;// 0=orange 1=purple 2=blue
+let ringColourChange = 0;//0=orange 1=blue 2=purple else=brown
 
 
 function setup_wallpaper(pWallpaper) {
